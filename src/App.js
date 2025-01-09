@@ -1,11 +1,10 @@
 import './App.css';
+import Homepage from './components/homepage/Homepage';
 
 function App() {
   return (
     <div className="App">
-     <h1 className="text-3xl font-bold underline">
-      Movie platform bnega
-    </h1>
+    <Homepage/>
     </div>
   );
 }
