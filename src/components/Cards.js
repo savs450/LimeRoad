@@ -1,10 +1,11 @@
 import React from "react";
 import { img_300, img_500, unavailable, noPicture } from "./util";
 
-function Cards({ id, poster, title, date, media_type, vote_average }) {
+function Cards({ id, poster, title, date, media_type, vote_average,onClick }) {
   return (
     // <div className='flex flex-col items-center gap-4 p-4 border rounded-lg ' >
-    <div className="flex-shrink-0 w-full sm:w-[300px] lg:w-1/4 xl:w-1/5 bg-customBlue p-2.5 rounded-2xl">
+    <div onClick={onClick}
+    className="flex-shrink-0 w-full sm:w-[300px] lg:w-1/4 xl:w-1/5 bg-customBlue p-2.5 rounded-2xl">
       <div className="w-full h-auto rounded-lg">
         <img
           className="rounded-2xl"
