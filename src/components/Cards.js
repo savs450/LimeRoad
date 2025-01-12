@@ -1,14 +1,14 @@
 import React from "react";
-import { img_300, img_500, unavailable, noPicture } from "./util";
+import { img_300, unavailable } from "./util";
 
 function Cards({ id, poster, title, date, media_type, vote_average,onClick }) {
   return (
-    // <div className='flex flex-col items-center gap-4 p-4 border rounded-lg ' >
+ 
     <div onClick={onClick}
     className="flex-shrink-0 w-full sm:w-[300px] lg:w-1/4 xl:w-1/5 bg-customBlue p-2.5 rounded-2xl">
       <div className="w-full h-auto rounded-lg">
         <img
-          className="rounded-2xl"
+          className="w-full h-auto rounded-2xl object-cover"
           src={poster ? `${img_300}/${poster}` : unavailable}
           alt={title}
         ></img>

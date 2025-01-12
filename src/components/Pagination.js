@@ -1,7 +1,7 @@
 import React from "react";
 
 function Pagination({currentPage, totalResults,onPageChange }) {
-  // console.log("pagiation called ");
+  console.log("pagiation called ");
   const totalPages = Math.ceil(totalResults / 20);
 
   function handlePrevious(){
