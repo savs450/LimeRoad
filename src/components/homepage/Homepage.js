@@ -12,6 +12,7 @@ function Homepage() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [totalResults, setTotalResults] = useState(0);
+  const [favourites,setFavourites] =useState([])
 
   const url = useMemo(
     () =>
@@ -57,6 +58,12 @@ function Homepage() {
     setCurrentPage(page);
     window.scroll(0, 0);
   }
+  function handleToggle(movie){
+    console.log("handleToggle")
+    const isFavourite = favourites.some((fav)=> fav.id === movie.id)
+    return isFavourite ? setFavourites.filter((fav )=>fav.id !== movie.id) : setFavourites([...favourites, movie]);
+  }
+
   const movieCards = useMemo(() => {
     return filteredMovies && filteredMovies.length > 0 ? (
       filteredMovies.map((item, i) => (
@@ -69,6 +76,8 @@ function Homepage() {
           media_type="movie"
           vote_average={item.vote_average}
           onClick={() => handleCardClick(item)}
+          toggleFavourite = {()=>handleToggle(item)}
+          isFavourite ={favourites.some((fav)=> fav.id === item.id)}
         />
       ))
     ) : (
@@ -76,7 +85,7 @@ function Homepage() {
         No Movies Found :(
       </div>
     );
-  }, [filteredMovies]);
+  }, [filteredMovies,favourites]);
 
   const paginationComponent = useMemo(() => (
     <Pagination
@@ -85,6 +94,15 @@ function Homepage() {
       onPageChange={(page) => handlePageChange(page)}
     />
   ),[currentPage,totalResults]);
+
+  useEffect (()=>(
+    localStorage.setItem("favourites",JSON.stringify(favourites))
+  ),[favourites])
+
+  useEffect(()=>{
+    const savedFavourites = JSON.parse(localStorage.getItem("favourites")) ||[]
+    setFavourites(savedFavourites)
+},[])
   useEffect(() => {
     fetchData();
   }, [currentPage,url]);
