@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/LimeRoad/static/css/main.0cb388da.css",
-    "main.js": "/LimeRoad/static/js/main.edfd1798.js",
+    "main.js": "/LimeRoad/static/js/main.c5333345.js",
     "static/js/279.f1da524a.chunk.js": "/LimeRoad/static/js/279.f1da524a.chunk.js",
     "index.html": "/LimeRoad/index.html",
     "main.0cb388da.css.map": "/LimeRoad/static/css/main.0cb388da.css.map",
-    "main.edfd1798.js.map": "/LimeRoad/static/js/main.edfd1798.js.map",
+    "main.c5333345.js.map": "/LimeRoad/static/js/main.c5333345.js.map",
     "279.f1da524a.chunk.js.map": "/LimeRoad/static/js/279.f1da524a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0cb388da.css",
-    "static/js/main.edfd1798.js"
+    "static/js/main.c5333345.js"
   ]
 }
