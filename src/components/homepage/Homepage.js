@@ -61,7 +61,7 @@ function Homepage() {
   function handleToggle(movie){
     console.log("handleToggle")
     const isFavourite = favourites.some((fav)=> fav.id === movie.id)
-    return isFavourite ? setFavourites.filter((fav )=>fav.id !== movie.id) : setFavourites([...favourites, movie]);
+    return isFavourite ?  setFavourites(favourites.filter((fav) => fav.id !== movie.id)): setFavourites([...favourites, movie]);
   }
 
   const movieCards = useMemo(() => {
